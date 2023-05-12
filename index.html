@@ -16,35 +16,50 @@
   </head>
   <body>
     <div class="container">
-      <div class="card d-flex">
-        <div class="card-body">
-          <div class="row row-cols-2">
-            <form id="city-form">
-              <input
-                type="city"
-                id="city-search"
-                placeholder="Choose your city"
-                autofocus="on"
-              />
-              <input type="submit" value="🔍Search" />
-            </form>
-          </div>
-          <h1 id="city">Barcelona</h1>
-          <div class="d-flex weather-temperature">
-            <img src="" alt="Clear" id="icon" />
-            <div>
-              <strong id="temperature"></strong><span class="units"> °C</span>
+      <div class="weather-app">
+        <div class="card d-flex">
+          <div class="card-body">
+            <div class="row row-cols-2">
+              <form id="city-form">
+                <input
+                  type="city"
+                  id="city-search"
+                  placeholder="Choose your city"
+                  autofocus="on"
+                />
+                <input type="submit" value="🔍Search" />
+              </form>
             </div>
-          </div>
-          <div class="col-6">
+            <h1 id="city">Barcelona, Spain</h1>
             <ul>
-              <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Precipitations: <span id="precipitations"></span>%</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
+              <li>Friday 05:00</li>
+              <li>Rainy</li>
             </ul>
+            <div class="row">
+              <div class="col-6">
+                <img src="src/rainy.jpeg " alt="rainy" />
+                12 ºC|ºF
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Precipitations: <span id="precipitations"></span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <small>
+        <a
+          href="https://github.com/nutik734/vanila-wheater-app.git"
+          target="_blank"
+        >
+          Open-source code
+        </a>
+        by Anna Slinkina
+      </small>
     </div>
     <script src="src/app.js"></script>
   </body>
