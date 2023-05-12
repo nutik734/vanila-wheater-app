@@ -16,32 +16,34 @@
   </head>
   <body>
     <div class="container">
-      <h1>Wheather app</h1>
-      <h1 id="city">Barcelona</h1>
-      <div class="row row-cols-2">
-        <form id="city-form">
-          <input
-            type="city"
-            id="city-search"
-            placeholder="Choose your city"
-            autofocus="on"
-          />
-          <input type="submit" value="🔍Search" />
-        </form>
-      </div>
-
-      <div class="d-flex weather-temperature">
-        <img src="" alt="Clear" id="icon" />
-        <div>
-          <strong id="temperature"></strong><span class="units"> °C</span>
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <div class="row row-cols-2">
+            <form id="city-form">
+              <input
+                type="city"
+                id="city-search"
+                placeholder="Choose your city"
+                autofocus="on"
+              />
+              <input type="submit" value="🔍Search" />
+            </form>
+          </div>
+          <h1 id="city">Barcelona</h1>
+          <div class="d-flex weather-temperature">
+            <img src="" alt="Clear" id="icon" />
+            <div>
+              <strong id="temperature"></strong><span class="units"> °C</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Precipitations: <span id="precipitations"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col-6">
-        <ul>
-          <li>Humidity: <span id="humidity"></span>%</li>
-          <li>Precipitations: <span id="precipitations"></span>%</li>
-          <li>Wind: <span id="wind"></span> km/h</li>
-        </ul>
       </div>
     </div>
     <script src="src/app.js"></script>
