@@ -11,6 +11,7 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Wheather app</title>
   </head>
@@ -34,7 +35,7 @@
               <h1 id="city">Barcelona, Spain</h1>
               <ul>
                 <li>Friday 05:00</li>
-                <li>Rainy</li>
+                <li id="description">Rainy</li>
               </ul>
             </div>
             <div class="row">
@@ -42,14 +43,13 @@
                 <div class="d-flex weather-temperature">
                   <img src="src/rainy.jpeg " alt="rainy" />
                   <strong id="temperature">12</strong>
-                  <span class="units"> °C|
-                    <a href="#">°F</a></span>
+                  <span class="units"> °C| <a href="#">°F</a></span>
                 </div>
               </div>
               <div class="col-6">
                 <ul>
                   <li>Humidity: <span id="humidity"></span>%</li>
-                  <li>Precipitations: <span id="precipitations"></span>%</li>
+                  <li>Pressure: <span id="pressure"></span></li>
                   <li>Wind: <span id="wind"></span> km/h</li>
                 </ul>
               </div>
