@@ -40,9 +40,20 @@ function displayTemperature(response){
    iconElement.setAttribute("alt", response.data.condition.description);
 
 }
+function search(city){
+  let apiKey="0a49584f932f33a5d9ea5beto34a414d";
+  
+  let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemperature);  
+}
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInput=document.querySelector("#city-search");
+    search(cityInput.value);
+    
+}
 
-let apiKey="0a49584f932f33a5d9ea5beto34a414d";
-let query= "Barcelona";
-let apiUrl= `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayTemperature);
+
+let form= document.querySelector("#city-form");
+form.addEventListener("submit",handleSubmit);
