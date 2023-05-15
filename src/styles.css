@@ -49,3 +49,11 @@ text-transform: capitalize;
     position: relative;
     font-size: 16px;
 }
+.active{
+color:rgb(33, 33, 33);
+text-decoration: none;
+cursor: default;
+}
+.active:hover {
+    text-decoration: none;
+}
