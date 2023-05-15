@@ -57,3 +57,8 @@ cursor: default;
 .active:hover {
     text-decoration: none;
 }
+ .card-body {
+     background-color:#f7f1e7;
+     border-radius: 10px;
+     box-shadow: 0 0 10px #8E9EBE;
+ }
