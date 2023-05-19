@@ -66,6 +66,7 @@ cursor: default;
     margin-top: 28px;
     text-align: center;
     color: #000;
+  
  }
  .weather-forecast-date{
     font-size:16px;
@@ -77,3 +78,4 @@ cursor: default;
  .weather-forecast-temperatures {
     font-size: 13px;
  }
+ 
