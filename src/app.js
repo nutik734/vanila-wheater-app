@@ -19,31 +19,48 @@ function formatDate(timestamp){
     let day= days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp){
+let date= new Date(timestamp*1000);
+let day= date.getDay();
+let days= 
+    ["Sun", 
+     "Mon", 
+     "Tue", 
+     "Wed",
+     "Thu", 
+     "Fri", 
+     "Sat"];
 
+return days[day];
+}
 function displayForecast(response){
-    console.log(response.data.daily);
+    let forecast= response.data.daily;
+
     let forecastElement= document.querySelector("#forecast");
-    let days= ["Sat","Sun","Mon","Tue","Wed","Thu"];
+    
     let forecastHTML=`<div class="row">`;
 
-    days.forEach(function(day){
-     forecastHTML= forecastHTML+= `
+    forecast.forEach(function(forecastDay,index){
+    if(index<6){
+      forecastHTML= forecastHTML+= `
         <div class="col-2">
              <div class="card forecast">
              <div class="card-body">
-                  <div class="weather-forecast-date">${day}</div>
-                  <img src="src/rainy.jpeg" alt="" width="32" />
+                  <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
+                  <img src="${forecastDay.condition.icon_url}" 
+                  alt="${forecastDay.condition.description}" width="32" />
                   <div class="weather-forecast-temperatures">
                     <span class="weather-forecast-temperature-max"> 
-                      18 °</span>
+                      ${Math.round(forecastDay.temperature.maximum)}°</span>
                     <span class="weather-forecast-temperature-min"> 
-                      12 °</span>
+                       ${Math.round(forecastDay.temperature.minimum)}°</span>
                   </div>
              </div>
             </div>
         </div>
               `;
-    });
+    }
+      });
     
     forecastHTML+= `</div>`;
     forecastElement.innerHTML= forecastHTML;
@@ -115,4 +132,4 @@ fahrenheitLink.addEventListener("click",displayFahrenheitTemperature);
 let celsiusLink= document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click",displayCelsiusTemperature);
 
-search("New York");
+search("Barcelona");
